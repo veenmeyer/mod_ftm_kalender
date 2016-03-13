@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2013 einsatzkomponente.de. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+-->
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>einsatzkomponente.de FTM_Kalender</name>
+	<author>Ralf Meyer</author>
+	<creationDate>2016-03-13</creationDate>
+	<copyright>Copyright (c) 2016 einsatzkomponente.de. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.00</version>
+	<description>
+	<![CDATA[
+	Das Modul dient zur Anzeige der nächsten anliegenden Termine in der Komponente 'com_feuerwehrkalender'.
+	]]>
+	</description>
+
+	<files>
+		<filename module="mod_ftm_kalender">mod_ftm_kalender.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages>
+		<language tag="de-DE">de-DE.mod_ftm_kalender.ini</language>
+		<language tag="de-DE">de-DE.mod_ftm_kalender.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field name="count" type="list" default="3" label="Wieviele Termine sollen angezeigt werden ?" description="">
+  					<option value="1">1</option>
+  					<option value="2">2</option>
+  					<option value="3">3</option>
+  					<option value="4">4</option>
+				</field>	
+				
+				<field
+					name="show_termin_detail"
+					type="radio"
+					class="btn-group"
+					label="Termin zum Termin-Detail verlinken ?"
+					description=""
+					default="0">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+
+<field name="mymenuitem" type="menuitem" default="" label="Menüeintrag für den Terminkalender" description="" />
+
+				<field
+					name="css"
+					type="textarea" rows="10"
+					label="CSS-Style"
+					default=".mod_ftm_tab {width:100%;border:1px solid #ffffff;}
+.mod_ftm_tr {padding-left:10px !important;border-bottom:1px solid #ffffff;}
+.mod_ftm_td {padding-left:10px !important;}
+
+.mod_ftm_termin_name {font-size:larger;font-weight:bold;text-decoration:none;}"
+					description="Anpassen des CSS-Style" />
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+				>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+<!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<!-- Note: No spaces or linebreaks allowed between the server tags -->
+		<server type="extension" priority="1" name="mod_ftm_kalender">http://www.feuerwehr-veenhusen.de/update/com_einsatzkomponente-update.xml</server>
+	</updateservers>
+	
+</extension>
