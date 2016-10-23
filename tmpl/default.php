@@ -10,6 +10,8 @@ defined('_JEXEC') or die;
 // Import CSS
 $document = JFactory::getDocument();
 $document->addStyleSheet('components/com_firefighters/assets/css/firefigthers.css');
+		//$document->addStyleSheet($this->baseurl.'/media/jui/css/bootstrap.min.css');
+		$document->addStyleSheet('../media/jui/css/icomoon.css');
 
 // Helper-class laden
 require_once JPATH_SITE.'/administrator/components/com_firefighters/helpers/firefighters.php'; 
@@ -50,30 +52,29 @@ $termine[$a]->beschreibung = (strlen($termine[$a]->beschreibung) > 100) ? substr
 	<tr class="mod_ftm_tr">
 	<td class="mod_ftm_td">  
 
+  <?php if ($show_termin_detail=='1'):; ?>
+           <a href="<?php echo JRoute::_('index.php?option=com_firefighters&Itemid='.$mymenuitem.'&view=termin&id=' . (int)$termine[$a]->id); ?>">
+		   <?php echo '<span class="mod_ftm_termin_name"><i class="icon-star"></i>  '.$termine[$a]->name.'</span></br>';?>
+		   </a>
+           <?php else:?>
+           <?php echo '<span  class="mod_ftm_termin_name"><i class="icon-star"></i>  '.$termine[$a]->name.'</span></br>';?>
+           <?php endif;?>
   
   <?php 
 	  $start_time = date('H:i', $curTime);
-	  echo '<span class="glyphicon glyphicon-time" style="margin-right:3px;"></span>'.date('d.m.Y ', $curTime);
+	  echo '<i class="icon-calendar"></i>  '.date('d.m.Y ', $curTime);
 	  if ($start_time != '00:00') :
-	  echo'@ '.date('H:i ', $curTime).' Uhr';
+	  echo'<i class="icon-clock"></i>  '.date('H:i ', $curTime).' Uhr';
 	  endif;
 	  echo '</br>';
   ?>
-  
-  <?php if ($show_termin_detail=='1'):; ?>
-           <a href="<?php echo JRoute::_('index.php?option=com_firefighters&Itemid='.$mymenuitem.'&view=termin&id=' . (int)$termine[$a]->id); ?>">
-		   <?php echo '<span class="mod_ftm_termin_name">'.$termine[$a]->name.'</span></br>';?>
-		   </a>
-           <?php else:?>
-           <?php echo '<span  class="mod_ftm_termin_name">'.$termine[$a]->name.'</span></br>';?>
-           <?php endif;?>
-
   
 
 
         <?php
 			//Support for multiple or not foreign key field: auswahlorga
 			$termine[$a]->abteilungen = explode(',',$termine[$a]->abteilungen);
+			$abt = '';
 					$data = array();
 					foreach($termine[$a]->abteilungen as $value):
 						$db = JFactory::getDbo();
@@ -87,11 +88,11 @@ $termine[$a]->beschreibung = (strlen($termine[$a]->beschreibung) > 100) ? substr
 						if(count($results)){
 							$data[] = $results[0]->name; 
 							
-							echo '<font color="'.$results[0]->abteilung_farbe.'">'.$results[0]->name.'</font color></br>';
+							$abt .= '<font color="'.$results[0]->abteilung_farbe.'"><i class="icon-user"></i>  '.$results[0]->name.'</font color></br>';
 							
 						}
 					endforeach;
-					//echo implode(',',$data); ?>
+					echo ''.$abt; ?>
   
      </td></tr>
 
@@ -101,7 +102,7 @@ $termine[$a]->beschreibung = (strlen($termine[$a]->beschreibung) > 100) ? substr
    ?>
    <?php
 else:
-echo '<tr class="mod_ftm_tr"><td class="mod_ftm_td">keine Termine vorhanden</td></tr>';
+echo '<tr class="mod_ftm_tr"><td class="mod_ftm_td"><i class="icon-minus"></i>  keine Termine vorhanden</td></tr>';
 endif;
 ?>
 

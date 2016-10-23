@@ -8,12 +8,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>einsatzkomponente.de FTM_Kalender</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2016-03-13</creationDate>
+	<creationDate>2016-10-23</creationDate>
 	<copyright>Copyright (c) 2016 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.00</version>
+	<version>1.01</version>
 	<description>
 	<![CDATA[
 	Das Modul dient zur Anzeige der nächsten anliegenden Termine in der Komponente 'com_feuerwehrkalender'.
@@ -62,11 +62,7 @@
 					name="css"
 					type="textarea" rows="10"
 					label="CSS-Style"
-					default=".mod_ftm_tab {width:100%;border:1px solid #ffffff;}
-.mod_ftm_tr {padding-left:10px !important;border-bottom:1px solid #ffffff;}
-.mod_ftm_td {padding-left:10px !important;}
-
-.mod_ftm_termin_name {font-size:larger;font-weight:bold;text-decoration:none;}"
+					default=".mod_ftm_tab {width:100%;border:1px solid #ffffff;} .mod_ftm_tr {padding-left:10px !important;border-bottom:1px solid #ffffff;} .mod_ftm_td {padding-left:10px !important;padding-bottom:10px;padding-top:10px;}  .mod_ftm_termin_name {font-size:larger;font-weight:bold;text-decoration:none;}"
 					description="Anpassen des CSS-Style" />
 
 			</fieldset>
