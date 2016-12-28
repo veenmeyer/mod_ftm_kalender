@@ -8,12 +8,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>einsatzkomponente.de FTM_Kalender</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2016-10-23</creationDate>
+	<creationDate>2016-12-28</creationDate>
 	<copyright>Copyright (c) 2016 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.01</version>
+	<version>1.02</version>
 	<description>
 	<![CDATA[
 	Das Modul dient zur Anzeige der nächsten anliegenden Termine in der Komponente 'com_feuerwehrkalender'.
@@ -114,7 +114,7 @@
 <!-- UPDATESERVER DEFINITION -->
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" priority="1" name="mod_ftm_kalender">http://www.feuerwehr-veenhusen.de/update/com_einsatzkomponente-update.xml</server>
+		<server type="extension" priority="1" name="mod_ftm_kalender">https://www.feuerwehr-veenhusen.de/update/mod_ftm_kalender-update.xml</server>
 	</updateservers>
 	
 </extension>
