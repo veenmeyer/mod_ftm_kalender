@@ -9,7 +9,7 @@ defined('_JEXEC') or die;
 
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_firefighters/assets/css/firefigthers.css');
+$document->addStyleSheet('components/com_firefighters/assets/css/firefighters.css');
 		//$document->addStyleSheet($this->baseurl.'/media/jui/css/bootstrap.min.css');
 		$document->addStyleSheet('../media/jui/css/icomoon.css');
 

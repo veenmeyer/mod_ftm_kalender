@@ -8,12 +8,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>einsatzkomponente.de FTM_Kalender</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2016-12-28</creationDate>
-	<copyright>Copyright (c) 2016 einsatzkomponente.de. All rights reserved.</copyright>
+	<creationDate>2017-02-17</creationDate>
+	<copyright>Copyright (c) 2017 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.02</version>
+	<version>1.03</version>
 	<description>
 	<![CDATA[
 	Das Modul dient zur Anzeige der nächsten anliegenden Termine in der Komponente 'com_feuerwehrkalender'.
