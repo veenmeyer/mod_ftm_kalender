@@ -22,7 +22,13 @@ $params_com       		= $app->getParams('com_firefighters');
 
 
 		// Funktion : die X Termine aus DB laden
-		$query = 'SELECT * FROM #__firefighters_termine WHERE state = "1" AND DATE_ADD(datum_start, INTERVAL 3 HOUR) > Current_TimeStamp ORDER BY datum_start ASC LIMIT '.$count.' ' ;
+		$query = 'SELECT * FROM #__firefighters_termine WHERE state = "1" AND DATE_ADD(datum_start, INTERVAL 3 HOUR) > Current_TimeStamp ';
+		
+		If ($filter_abteilungen) : 
+		$query .= 'AND FIND_IN_SET("' . $filter_abteilungen. '",abteilungen) ';
+		endif;
+		
+		$query .= 'ORDER BY datum_start ASC LIMIT '.$count.' ' ;
 		$db	= JFactory::getDBO();
 		$db->setQuery( $query );
 		$termine = $db->loadObjectList(); 
@@ -92,7 +98,7 @@ $termine[$a]->beschreibung = (strlen($termine[$a]->beschreibung) > 100) ? substr
 							
 						}
 					endforeach;
-					echo ''.$abt; ?>
+					If (!$filter_abteilungen) :echo ''.$abt; endif; ?>
   
      </td></tr>
 

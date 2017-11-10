@@ -8,12 +8,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>einsatzkomponente.de FTM_Kalender</name>
 	<author>Ralf Meyer</author>
-	<creationDate>2017-02-17</creationDate>
+	<creationDate>2017-11-10</creationDate>
 	<copyright>Copyright (c) 2017 einsatzkomponente.de. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.03</version>
+	<version>1.04</version>
 	<description>
 	<![CDATA[
 	Das Modul dient zur Anzeige der nächsten anliegenden Termine in der Komponente 'com_feuerwehrkalender'.
@@ -36,6 +36,14 @@
 		<fields name="params">
 			<fieldset name="basic">
 
+				 <field name="filter_abteilungen" 
+						type="sql" 
+						class="inputbox" 
+						label = "Filter Abteilungen :"
+						query="SELECT '' AS `id`, '- alle anzeigen -' AS `name` UNION SELECT `id`, `name` FROM `#__firefighters_abteilungen`" 
+						key_field="id" 
+						value_field="name"/>  
+			
 				<field name="count" type="list" default="3" label="Wieviele Termine sollen angezeigt werden ?" description="">
   					<option value="1">1</option>
   					<option value="2">2</option>

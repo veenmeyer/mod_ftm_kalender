@@ -12,6 +12,8 @@ require_once dirname(__FILE__) . '/helper.php';
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $class_sfx = htmlspecialchars($params->get('class_sfx'));
-$count = htmlspecialchars($params->get('count'));
+$count = htmlspecialchars($params->get('count','3'));
+$filter_abteilungen = $params->get('filter_abteilungen','');
+
 
 require(JModuleHelper::getLayoutPath('mod_ftm_kalender', $params->get('layout', 'default')));
